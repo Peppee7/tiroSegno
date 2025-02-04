@@ -8,8 +8,8 @@
 <body>
     <script src="static/js/p5.min.js"></script>
     <script>
-        let diametro = 400
-
+        let diametro = 400;
+        
         function setup() {
             createCanvas(600, 600);
             background(255, 255, 255);
@@ -46,9 +46,44 @@
         }
 
         function mouseClicked() {
+            let centerX = width/2;
+            let centerY = height/2;
+            let c1 = mouseX - centerX;
+            let c2 = mouseY - centerY;
 
-            console.log(mouseX);
+            let dist = sqrt((c1 * c1) + (c2 * c2));
 
+            console.log(dist);
+            
+            if(dist <= 200) {
+                if(dist >= 100) {
+                    if(dist >= 180) {
+                        alert("1 punto");
+                    } else if(dist >= 160) {
+                        alert("2 punti");
+                    } else if(dist >= 140) {
+                        alert("3 punti");
+                    } else if(dist >= 120) {
+                        alert("4 punti");
+                    } else if(dist >= 100) {
+                        alert("5 punti");
+                    }
+                } else {
+                    if(dist >= 80) {
+                        alert("6 punti");
+                    } else if(dist >= 60) {
+                        alert("7 punti");
+                    } else if(dist >= 40) {
+                        alert("8 punti");
+                    } else if(dist >= 20) {
+                        alert("9 punti");
+                    } else if(dist >= 0) {
+                        alert("10 punti");
+                    }
+                }
+            } else {
+                alert("Fuori, 0 punti");
+            }
         }
     </script>
 </body>
