@@ -6,9 +6,13 @@
     <title>TIRO A SEGNO</title>
 </head>
 <body>
+    <div class="pt">Punti: 0</div>
+
     <script src="static/js/p5.min.js"></script>
     <script>
         let diametro = 400;
+        let punteggio = document.querySelector(".pt");
+        let punti = 0;
         
         function setup() {
             createCanvas(600, 600);
@@ -51,6 +55,9 @@
             let c1 = mouseX - centerX;
             let c2 = mouseY - centerY;
 
+            fill(255, 0, 0);
+            circle(mouseX, mouseY, 10);
+
             let dist = sqrt((c1 * c1) + (c2 * c2));
 
             console.log(dist);
@@ -58,31 +65,41 @@
             if(dist <= 200) {
                 if(dist >= 100) {
                     if(dist >= 180) {
-                        alert("1 punto");
+                        punti = punti + 1;
+                        punteggio.innerHTML = "Punti: " + punti;
                     } else if(dist >= 160) {
-                        alert("2 punti");
+                        punti = punti + 2;
+                        punteggio.innerHTML = "Punti: " + punti;
                     } else if(dist >= 140) {
-                        alert("3 punti");
+                        punti = punti + 3;
+                        punteggio.innerHTML = "Punti: " + punti;
                     } else if(dist >= 120) {
-                        alert("4 punti");
+                        punti = punti + 4;
+                        punteggio.innerHTML = "Punti: " + punti;
                     } else if(dist >= 100) {
-                        alert("5 punti");
+                        punti = punti + 5;
+                        punteggio.innerHTML = "Punti: " + punti;
                     }
                 } else {
                     if(dist >= 80) {
-                        alert("6 punti");
+                        punti = punti + 6;
+                        punteggio.innerHTML = "Punti: " + punti;
                     } else if(dist >= 60) {
-                        alert("7 punti");
+                        punti = punti + 7;
+                        punteggio.innerHTML = "Punti: " + punti;
                     } else if(dist >= 40) {
-                        alert("8 punti");
+                        punti = punti + 8;
+                        punteggio.innerHTML = "Punti: " + punti;
                     } else if(dist >= 20) {
-                        alert("9 punti");
+                        punti = punti + 9;
+                        punteggio.innerHTML = "Punti: " + punti;
                     } else if(dist >= 0) {
-                        alert("10 punti");
+                        punti = punti + 10;
+                        punteggio.innerHTML = "Punti: " + punti;
                     }
                 }
             } else {
-                alert("Fuori, 0 punti");
+                punteggio.innerHTML = "Punti: " + punti;
             }
         }
     </script>
